@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: private_events
+  pool: 5
+  username: project-dbs
+  password: password
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: private_events
+  pool: 5
+  username: project-dbs
+  password: password
