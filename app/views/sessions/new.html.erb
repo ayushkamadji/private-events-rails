@@ -1,0 +1,12 @@
+<h2> Sign in </h2>
+<%= form_for :session do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email %>
+  </div>
+  <div class="action">
+    <%= f.submit "Sign in" %>
+  </div>
+<% end %>
