@@ -3,11 +3,30 @@
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
-</p>
-
-<p>
+  <br>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
-<%= link_to 'Back', '#' %>
+<%= link_to 'Back', events_path %>
+
+<h2>Events</h2>
+<p>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Host</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <%= render @user.events %>
+    </tbody>
+  </table>
+  
+  <br>
+</p>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'users#show'
+  root 'events#index'
+
+  resources :events
   resources :users, except: [:index, :edit]
 
   get   '/sign_in', to: 'sessions#new'
