@@ -30,7 +30,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     if @user
-      @event = @user.events.build(event_params)
+      @event = @user.hosted_events.build(event_params)
       if @event.save
         flash[:success] = "Event successfully created"
         redirect_to @event

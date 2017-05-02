@@ -3,17 +3,36 @@
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
-</p>
-
-<p>
+  <br>
   <strong>Location:</strong>
   <%= @event.location %>
-</p>
-
-<p>
+  <br>
   <strong>Date:</strong>
   <%= @event.date %>
+  <br>
+  <strong>Contact:</strong>
+  <%= @event.host.email %>
 </p>
+
+
+<h2>Attenders</h2>
+
+<% if @event.attenders.any? %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <% @event.attenders.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+</table>
+<% else %>
+  <p>Nobody attending yet..</p>
+<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

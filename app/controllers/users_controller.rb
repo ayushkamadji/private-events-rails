@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   def show
     unless @user
       redirect_to sign_in_path
+    else
+      @upcoming_events = @user.upcoming_events
+      @previous_events = @user.previous_events
     end
   end
 
